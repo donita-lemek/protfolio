@@ -217,24 +217,19 @@ def render_skills():
     # Using 3 columns for density and readability
     col1, col2, col3 = st.columns(3)
     
-    # Use st.container to apply the card background to the entire skill block
+    # FIX: Removed custom <div> tags inside columns to prevent flex layout conflicts.
+    # We will rely on the natural layout of st.markdown inside the columns.
     with col1:
-        st.markdown('<div class="content-card" style="padding:15px; border-left:none;">', unsafe_allow_html=True)
         st.subheader("Programming")
         st.markdown("Python, R, C, C++, Java, Javascript, HTML, CSS, SQL")
-        st.markdown('</div>', unsafe_allow_html=True)
         
     with col2:
-        st.markdown('<div class="content-card" style="padding:15px; border-left:none;">', unsafe_allow_html=True)
         st.subheader("Data Science / ML")
         st.markdown("Scikit-learn, NumPy, Pandas, Matplotlib, Machine Learning, Statistical Modelling")
-        st.markdown('</div>', unsafe_allow_html=True)
 
     with col3:
-        st.markdown('<div class="content-card" style="padding:15px; border-left:none;">', unsafe_allow_html=True)
         st.subheader("Tools / Frameworks")
         st.markdown("Tableau, React, Flask, MongoDB, Express, Node.js, Hadoop, SAP Analytics Cloud")
-        st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown("---")
 
@@ -246,6 +241,7 @@ def render_education_leadership():
 
     with col1:
         st.subheader("Education")
+        # FIX: Ensure content-card is correctly wrapping the education block
         st.markdown('<div class="content-card">', unsafe_allow_html=True) 
         st.markdown("**BTech Computer Science & Engineering (Data Science)**")
         st.caption("Kalam Technical University, Mar Athanasius College of Engineering")
@@ -255,6 +251,7 @@ def render_education_leadership():
         
     with col2:
         st.subheader("Leadership")
+        # Leadership blocks remain inside content-card wrappers, but are contained within the st.column
         st.markdown('<div class="content-card">', unsafe_allow_html=True) 
         st.markdown("**Campus Director @ Hult Prize MACE (2023-2025)**")
         st.markdown("""
