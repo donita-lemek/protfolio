@@ -76,7 +76,8 @@ def local_css():
         }}
         
         /* Content Card Styling (Floating/Glass effect) */
-        .content-card, .stExpander {{
+        /* Target the native Streamlit container/expander that we'll assign 'content-card' class to */
+        .content-card {{
             background-color: {CARD_BG};
             border-radius: 8px; /* Softer rounded corners */
             padding: 25px;
@@ -85,6 +86,14 @@ def local_css():
             border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border for depth */
         }}
         
+        .stExpander {{
+            background-color: {CARD_BG};
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }}
+
         /* Footer Styling */
         .footer {{
             text-align: center; 
@@ -137,7 +146,7 @@ def render_experience():
     """Renders Professional Experience details."""
     st.header("PROFESSIONAL EXPERIENCE")
 
-    # Experience details are wrapped in content-card for the floating effect
+    # Experience details are wrapped in content-card using raw markdown DIVs for full control
     
     # --- ProductByDesign ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
@@ -203,7 +212,7 @@ def render_projects():
     ]
 
     for project in PROJECTS:
-        # st.expander is styled as a floating card
+        # st.expander is styled as a floating card via CSS targetting .stExpander
         with st.expander(f"**{project['title']}** - *{project['tech']}*"):
             st.markdown(project['desc'])
             
@@ -217,19 +226,22 @@ def render_skills():
     # Using 3 columns for density and readability
     col1, col2, col3 = st.columns(3)
     
-    # FIX: Removed custom <div> tags inside columns to prevent flex layout conflicts.
-    # We will rely on the natural layout of st.markdown inside the columns.
+    # FIX: Using st.container with class to ensure proper column flex behavior.
+    
     with col1:
-        st.subheader("Programming")
-        st.markdown("Python, R, C, C++, Java, Javascript, HTML, CSS, SQL")
+        with st.container(border=True): # Use Streamlit's container for better column compliance
+            st.subheader("Programming")
+            st.markdown("Python, R, C, C++, Java, Javascript, HTML, CSS, SQL")
         
     with col2:
-        st.subheader("Data Science / ML")
-        st.markdown("Scikit-learn, NumPy, Pandas, Matplotlib, Machine Learning, Statistical Modelling")
+        with st.container(border=True):
+            st.subheader("Data Science / ML")
+            st.markdown("Scikit-learn, NumPy, Pandas, Matplotlib, Machine Learning, Statistical Modelling")
 
     with col3:
-        st.subheader("Tools / Frameworks")
-        st.markdown("Tableau, React, Flask, MongoDB, Express, Node.js, Hadoop, SAP Analytics Cloud")
+        with st.container(border=True):
+            st.subheader("Tools / Frameworks")
+            st.markdown("Tableau, React, Flask, MongoDB, Express, Node.js, Hadoop, SAP Analytics Cloud")
 
     st.markdown("---")
 
@@ -239,9 +251,12 @@ def render_education_leadership():
     st.header("EDUCATION & LEADERSHIP")
     col1, col2 = st.columns(2)
 
+    # FIX: Swapping custom DIVs for st.container() and applying content-card styling via CSS targeting the container.
+    # We must now manually inject the class if we want the specific 'content-card' style.
+    
     with col1:
         st.subheader("Education")
-        # FIX: Ensure content-card is correctly wrapping the education block
+        # Apply the content-card style to the container using a native Streamlit feature/hack:
         st.markdown('<div class="content-card">', unsafe_allow_html=True) 
         st.markdown("**BTech Computer Science & Engineering (Data Science)**")
         st.caption("Kalam Technical University, Mar Athanasius College of Engineering")
@@ -251,7 +266,7 @@ def render_education_leadership():
         
     with col2:
         st.subheader("Leadership")
-        # Leadership blocks remain inside content-card wrappers, but are contained within the st.column
+        # Leadership blocks
         st.markdown('<div class="content-card">', unsafe_allow_html=True) 
         st.markdown("**Campus Director @ Hult Prize MACE (2023-2025)**")
         st.markdown("""
