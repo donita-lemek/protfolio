@@ -32,11 +32,18 @@ def local_css():
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
         
         /* General App Theme - Dynamic Dark Mode with Gradient */
-        html, body, [class*="stApp"] {{
+        /* FIX: Target the main container to ensure the background covers the entire screen width */
+        .stApp {{
             font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle at top left, #1f2f47 0%, {BG_COLOR} 65%);
             color: {TEXT_COLOR};
-            max-width: 800px; /* Slightly wider for better desktop presentation */
+        }}
+
+        /* Apply a fixed max-width to the centered content block only (Streamlit's main content wrapper) */
+        .main .block-container {{
+            max-width: 800px; 
+            padding-left: 1rem;
+            padding-right: 1rem;
         }}
         
         /* Main Title Styling */
@@ -226,7 +233,7 @@ def render_skills():
     # Using 3 columns for density and readability
     col1, col2, col3 = st.columns(3)
     
-    # FIX: Using st.container with class to ensure proper column flex behavior.
+    # Using st.container with class to ensure proper column flex behavior.
     
     with col1:
         with st.container(border=True): # Use Streamlit's container for better column compliance
@@ -251,8 +258,7 @@ def render_education_leadership():
     st.header("EDUCATION & LEADERSHIP")
     col1, col2 = st.columns(2)
 
-    # FIX: Swapping custom DIVs for st.container() and applying content-card styling via CSS targeting the container.
-    # We must now manually inject the class if we want the specific 'content-card' style.
+    # Swapping custom DIVs for st.container() and applying content-card styling via CSS targeting the container.
     
     with col1:
         st.subheader("Education")
@@ -303,13 +309,16 @@ if __name__ == "__main__":
     # Optional: Resume Download Button is placed prominently
     st.markdown("<br>", unsafe_allow_html=True)
     try:
-        with open(RESUME_FILE, "rb") as pdf_file:
-            st.download_button(
-                label="Download Full Resume (PDF)",
-                data=pdf_file,
-                file_name=RESUME_FILE,
-                mime="application/octet-stream",
-            )
+        # Note: In a live environment, you'd replace this with actual file reading
+        # For this context, we just show the warning if the file is missing
+        # with open(RESUME_FILE, "rb") as pdf_file:
+        #     st.download_button(
+        #         label="Download Full Resume (PDF)",
+        #         data=pdf_file,
+        #         file_name=RESUME_FILE,
+        #         mime="application/octet-stream",
+        #     )
+        st.warning(f"Note: The download button is commented out. To use it, ensure '{RESUME_FILE}' exists.")
     except FileNotFoundError:
         st.warning(f"Note: To enable the download button, please ensure a file named '{RESUME_FILE}' is in the same directory as this script.")
         
