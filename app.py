@@ -157,7 +157,8 @@ def render_experience():
     
     # --- ProductByDesign ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Associate Data Scientist @ ProductByDesign (Remote Internship)")
+    st.subheader("Associate Data Scientist")
+    st.markdown("**ProductByDesign (Remote Internship)**")
     st.caption("Melbourne, Australia | August 2025 - Present")
     st.markdown("""
     - Built a **predictive dashboard** in SAP Analytics Cloud using time series forecasting.
@@ -168,7 +169,8 @@ def render_experience():
 
     # --- Kalkitech Ltd ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Software Development Engineer Intern @ Kalkitech Ltd (Hybrid Internship)")
+    st.subheader("Software Development Engineer Intern")
+    st.markdown("**Kalkitech Ltd (Hybrid Internship)**")
     st.caption("Kochi, Kerala | December 2023 - August 2025")
     st.markdown("""
     - Developed a C-based **simulation tool** to improve substation safety protocols, reducing incidents through better risk management.
@@ -179,7 +181,8 @@ def render_experience():
 
     # --- AtithiGo ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Frontend Developer @ AtithiGo (Remote Internship)")
+    st.subheader("Frontend Developer")
+    st.markdown("**AtithiGo (Remote Internship)**")
     st.caption("Kochi, Kerala | December 2024 - March 2025")
     st.markdown("""
     - Collaborated with a team of three developers to design and build the complete **front-end** for the AtithiGo hotel booking website.
