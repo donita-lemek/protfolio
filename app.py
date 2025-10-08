@@ -157,7 +157,7 @@ def render_experience():
     
     # --- ProductByDesign ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Associate Data Scientist (Remote Internship) @ ProductByDesign")
+    st.subheader("Associate Data Scientist @ ProductByDesign (Remote Internship)")
     st.caption("Melbourne, Australia | August 2025 - Present")
     st.markdown("""
     - Built a **predictive dashboard** in SAP Analytics Cloud using time series forecasting.
@@ -168,7 +168,7 @@ def render_experience():
 
     # --- Kalkitech Ltd ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Software Development Engineer Intern (Hybrid Internship) @ Kalkitech Ltd")
+    st.subheader("Software Development Engineer Intern @ Kalkitech Ltd (Hybrid Internship)")
     st.caption("Kochi, Kerala | December 2023 - August 2025")
     st.markdown("""
     - Developed a C-based **simulation tool** to improve substation safety protocols, reducing incidents through better risk management.
@@ -179,7 +179,7 @@ def render_experience():
 
     # --- AtithiGo ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Frontend Developer (Remote Internship) @ AtithiGo")
+    st.subheader("Frontend Developer @ AtithiGo (Remote Internship)")
     st.caption("Kochi, Kerala | December 2024 - March 2025")
     st.markdown("""
     - Collaborated with a team of three developers to design and build the complete **front-end** for the AtithiGo hotel booking website.
@@ -258,11 +258,11 @@ def render_education_leadership():
     st.header("EDUCATION & LEADERSHIP")
     col1, col2 = st.columns(2)
 
-    # Swapping custom DIVs for st.container() and applying content-card styling via CSS targeting the container.
+    # Use raw HTML structure consistently inside columns to ensure better flow control 
+    # and consistent application of content-card styling across the columns.
     
     with col1:
-        st.subheader("Education")
-        # Apply the content-card style to the container using a native Streamlit feature/hack:
+        st.markdown('<h3>Education</h3>', unsafe_allow_html=True)
         st.markdown('<div class="content-card">', unsafe_allow_html=True) 
         st.markdown("**BTech Computer Science & Engineering (Data Science)**")
         st.caption("Kalam Technical University, Mar Athanasius College of Engineering")
@@ -271,7 +271,7 @@ def render_education_leadership():
         st.markdown('</div>', unsafe_allow_html=True) 
         
     with col2:
-        st.subheader("Leadership")
+        st.markdown('<h3>Leadership</h3>', unsafe_allow_html=True)
         # Leadership blocks
         st.markdown('<div class="content-card">', unsafe_allow_html=True) 
         st.markdown("**Campus Director @ Hult Prize MACE (2023-2025)**")
