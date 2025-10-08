@@ -176,11 +176,11 @@ def render_experience():
     st.markdown(f"""
     <div class="content-card">
         <h3>Associate Data Scientist</h3>
-        <p>**ProductByDesign (Remote Internship)**</p>
+        <p><strong>ProductByDesign (Remote Internship)</strong></p>
         <div class="stCaption">Melbourne, Australia | August 2025 - Present</div>
         <ul>
-            <li>Built a **predictive dashboard** in SAP Analytics Cloud using time series forecasting.</li>
-            <li>Modeled and wrangled data for analysis; applied **Smart Predict** to forecast trends.</li>
+            <li>Built a <strong>predictive dashboard</strong> in SAP Analytics Cloud using time series forecasting.</li>
+            <li>Modeled and wrangled data for analysis; applied <strong>Smart Predict</strong> to forecast trends.</li>
             <li>Visualized insights with interactive charts and KPIs to support business decisions.</li>
         </ul>
     </div>
@@ -190,10 +190,10 @@ def render_experience():
     st.markdown(f"""
     <div class="content-card">
         <h3>Software Development Engineer Intern</h3>
-        <p>**Kalkitech Ltd (Hybrid Internship)**</p>
+        <p><strong>Kalkitech Ltd (Hybrid Internship)</strong></p>
         <div class="stCaption">Kochi, Kerala | December 2023 - August 2025</div>
         <ul>
-            <li>Developed a C-based **simulation tool** to improve substation safety protocols, reducing incidents through better risk management.</li>
+            <li>Developed a C-based <strong>simulation tool</strong> to improve substation safety protocols, reducing incidents through better risk management.</li>
             <li>Built a React UI for enhanced accessibility and used data visualization for testing and performance validation.</li>
             <li>Working on ML based projects to simulate phasor signals.</li>
         </ul>
@@ -204,10 +204,10 @@ def render_experience():
     st.markdown(f"""
     <div class="content-card">
         <h3>Frontend Developer</h3>
-        <p>**AtithiGo (Remote Internship)**</p>
+        <p><strong>AtithiGo (Remote Internship)</strong></p>
         <div class="stCaption">Kochi, Kerala | December 2024 - March 2025</div>
         <ul>
-            <li>Collaborated with a team of three developers to design and build the complete **front-end** for the AtithiGo hotel booking website.</li>
+            <li>Collaborated with a team of three developers to design and build the complete <strong>front-end</strong> for the AtithiGo hotel booking website.</li>
             <li>Utilized modern front-end technologies to ensure a responsive and user-friendly design.</li>
             <li>Focused on enhancing UI/UX for seamless navigation and booking experience.</li>
         </ul>
@@ -292,10 +292,10 @@ def render_education_leadership():
         st.markdown(f"""
         <div class="content-card">
             <h3>Education</h3>
-            <p>**BTech Computer Science & Engineering (Data Science)**</p>
+            <p><strong>BTech Computer Science & Engineering (Data Science)</strong></p>
             <div class="stCaption">Kalam Technical University, Mar Athanasius College of Engineering</div>
             <div class="stCaption">Kothamangalam, Kerala | Expected June 2027</div>
-            <p>Cumulative GPA: **7.52/10**</p>
+            <p>Cumulative GPA: <strong>7.52/10</strong></p>
         </div>
         """, unsafe_allow_html=True) 
         
@@ -304,7 +304,7 @@ def render_education_leadership():
         st.markdown(f"""
         <div class="content-card"> 
             <h3>Leadership</h3>
-            <p>**Campus Director @ Hult Prize MACE (2023-2025)**</p>
+            <p><strong>Campus Director @ Hult Prize MACE (2023-2025)</strong></p>
             <ul>
                 <li>Led the Hult Prize On-Campus Program with 100+ participants.</li>
                 <li>Organized community events to foster social impact-driven innovation.</li>
@@ -315,10 +315,10 @@ def render_education_leadership():
         # Leadership block 2 - all content within a single markdown block
         st.markdown(f"""
         <div class="content-card"> 
-            <p>**Campus Lead @ TinkerHub MACE (2024-2025)**</p>
+            <p><strong>Campus Lead @ TinkerHub MACE (2024-2025)</strong></p>
             <ul>
-                <li>Organized Kerala's largest women-exclusive hackathon, **Tink-Her-Hack** (100 participants).</li>
-                <li>Secured **Best Venue Award** among 63 venues in Kerala.</li>
+                <li>Organized Kerala's largest women-exclusive hackathon, <strong>Tink-Her-Hack</strong> (100 participants).</li>
+                <li>Secured <strong>Best Venue Award</strong> among 63 venues in Kerala for conducting the same.</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
