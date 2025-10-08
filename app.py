@@ -74,9 +74,11 @@ def local_css():
             margin-bottom: 0.1em !important;
         }}
         
-        /* New H4 for Experience Titles: Slightly smaller than h3 for role/company */
+        /* New H4 for Experience Titles: Used for clean, single-line details in previous version.
+           Now reverting to using st.subheader (which is styled as H3 by Streamlit)
+           and st.markdown for the company. H4 styling is kept for reference. */
         h4 {{
-            color: {TEXT_COLOR}; /* Use main text color for readability */
+            color: {TEXT_COLOR};
             font-weight: 600;
             font-size: 1.1em;
             margin-top: 0;
@@ -166,8 +168,8 @@ def render_experience():
     
     # --- ProductByDesign ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    # Combine title, company, and internship mode into one H4 element
-    st.markdown("<h4>Associate Data Scientist | **ProductByDesign (Remote Internship)**</h4>", unsafe_allow_html=True)
+    st.subheader("Associate Data Scientist") # Job Title
+    st.markdown("**ProductByDesign (Remote Internship)**") # Company and Mode
     st.caption("Melbourne, Australia | August 2025 - Present")
     st.markdown("""
     - Built a **predictive dashboard** in SAP Analytics Cloud using time series forecasting.
@@ -178,8 +180,8 @@ def render_experience():
 
     # --- Kalkitech Ltd ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    # Combine title, company, and internship mode into one H4 element
-    st.markdown("<h4>Software Development Engineer Intern | **Kalkitech Ltd (Hybrid Internship)**</h4>", unsafe_allow_html=True)
+    st.subheader("Software Development Engineer Intern") # Job Title
+    st.markdown("**Kalkitech Ltd (Hybrid Internship)**") # Company and Mode
     st.caption("Kochi, Kerala | December 2023 - August 2025")
     st.markdown("""
     - Developed a C-based **simulation tool** to improve substation safety protocols, reducing incidents through better risk management.
@@ -190,8 +192,8 @@ def render_experience():
 
     # --- AtithiGo ---
     st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    # Combine title, company, and internship mode into one H4 element
-    st.markdown("<h4>Frontend Developer | **AtithiGo (Remote Internship)**</h4>", unsafe_allow_html=True)
+    st.subheader("Frontend Developer") # Job Title
+    st.markdown("**AtithiGo (Remote Internship)**") # Company and Mode
     st.caption("Kochi, Kerala | December 2024 - March 2025")
     st.markdown("""
     - Collaborated with a team of three developers to design and build the complete **front-end** for the AtithiGo hotel booking website.
