@@ -1,57 +1,59 @@
 import streamlit as st
-from PIL import Image
 
 # --- CONFIGURATION ---
 PAGE_TITLE = "Donita Lemek | Data Scientist & Developer"
-PAGE_ICON = "🌟"
+PAGE_ICON = "" # Removed emoji
 NAME = "DONITA LEMEK"
-DESCRIPTION = "Aspiring Data Scientist and Full-Stack Developer with a foundation in Data Analytics, MERN Stack, and Web Technologies. Interested in learning and exploring AI concepts."
+DESCRIPTION = "Aspiring Data Scientist and Full-Stack Developer with a foundation in Data Analytics, MERN Stack, and Web Technologies. Focused on AI concepts and practical application development."
 EMAIL = "donitalemek@gmail.com"
+RESUME_FILE = "Resume .pdf" 
+
+# Social media links displayed below header
 SOCIAL_MEDIA = {
     "LinkedIn": "https://linkedin.com/in/donita-lemek",
     "GitHub": "https://github.com/yourusername",
     "Portfolio (WIP)": "#", 
 }
-RESUME_FILE = "Resume .pdf" 
 
-st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON, layout="centered", initial_sidebar_state="collapsed") # Centered layout is better for small, elegant apps
+# Set page configuration with a clean, focused, centered layout
+st.set_page_config(page_title=PAGE_TITLE, layout="centered", initial_sidebar_state="collapsed") 
 
-# --- CUSTOM STYLING OVERHAUL ---
+# --- CUSTOM STYLING OVERHAUL (Next-Gen Aesthetic) ---
 def local_css():
-    """Injects custom CSS for a cute, elegant, and highly visible aesthetic."""
-    ACCENT_COLOR = "#3498db"  # Soft Blue/Teal for primary emphasis
-    TEXT_COLOR = "#2c3e50"    # Dark navy for high contrast
-    BG_COLOR = "#ecf0f1"      # Very light gray/off-white background
-    CARD_BG = "#ffffff"       # Pure white for content cards
+    """Injects custom CSS for a minimalist, high-contrast, next-gen aesthetic."""
+    ACCENT_COLOR = "#007ACC"  # Classic Professional Blue for borders/accents
+    TEXT_COLOR = "#1E293B"    # Slate/Near Black for high contrast
+    CARD_BG = "#F7FAFC"       # Very subtle off-white for content blocks
     
     st.markdown(f"""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
         
-        /* General App Theme */
+        /* General App Theme - High Contrast */
         html, body, [class*="stApp"] {{
             font-family: 'Poppins', sans-serif;
-            background-color: {BG_COLOR}; 
+            background-color: #FFFFFF; /* Pure White background */
             color: {TEXT_COLOR};
+            max-width: 750px; /* Optional: Constrain width for desktop reading comfort */
         }}
         
         /* Main Title Styling */
         h1 {{
             color: {TEXT_COLOR};
             font-weight: 700;
-            font-size: 3em; /* Larger main title */
+            font-size: 3em; 
             margin-bottom: 0.1em;
         }}
         
-        /* Section Header Styling */
+        /* Section Header Styling - Strong Vertical Separation */
         h2 {{
-            color: {ACCENT_COLOR};
+            color: {TEXT_COLOR};
             font-weight: 700;
-            font-size: 1.8em;
-            border-bottom: 2px solid {ACCENT_COLOR};
+            font-size: 1.6em;
+            border-bottom: 3px solid {ACCENT_COLOR}; /* Strong, clean underline */
             padding-bottom: 5px;
-            margin-top: 25px;
-            margin-bottom: 15px;
+            margin-top: 35px;
+            margin-bottom: 20px;
         }}
         
         /* Sub-Header Styling (Experience/Project Titles) */
@@ -63,23 +65,16 @@ def local_css():
         }}
         
         /* Content Card Styling (for Projects/Experience) */
-        .stExpander, .st-emotion-cache-1r6i0x {{
+        /* Applied to st.expander and custom divs for content blocks */
+        .content-card, .stExpander {{
             background-color: {CARD_BG};
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px; /* Less rounded, more geometric */
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Minimal shadow */
             margin-bottom: 15px;
-            border-left: 5px solid {ACCENT_COLOR}; /* Feature stripe */
+            border-left: 4px solid {ACCENT_COLOR}; /* Clean vertical emphasis */
         }}
         
-        /* Caption/Date Styling */
-        .stCaption {{
-            color: #7f8c8d; /* Gray for dates/location */
-            font-style: italic;
-            margin-top: -5px;
-            display: block;
-        }}
-
         /* Footer Styling */
         .footer {{
             text-align: center; 
@@ -93,17 +88,17 @@ def local_css():
         .stDownloadButton > button {{
             background-color: {ACCENT_COLOR};
             color: white;
-            border-radius: 8px;
+            border-radius: 4px;
             padding: 10px 20px;
             transition: all 0.3s ease;
         }}
         .stDownloadButton > button:hover {{
-            background-color: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #005A99;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }}
 
-        /* Hide the default Streamlit menu/footer/header */
+        /* Hide the default Streamlit footer/header for a cleaner look */
         #MainMenu {{visibility: hidden;}}
         footer {{visibility: hidden;}}
         header {{visibility: hidden;}}
@@ -116,21 +111,21 @@ def render_header():
     st.title(NAME)
     st.markdown(f"**{DESCRIPTION}**")
     
-    st.markdown(f"**📧 Email:** {EMAIL} | **📞 Phone:** +91 9400790480 | **📍 Location:** Wayanad, Kerala, India")
+    st.markdown(f"**Email:** {EMAIL} | **Phone:** +91 9400790480 | **Location:** Wayanad, Kerala, India")
 
     # Social Media Links
     social_links = " | ".join([f"[{key}]({value})" for key, value in SOCIAL_MEDIA.items()])
-    st.markdown(f"**🌐 Links:** {social_links}")
+    st.markdown(f"**Links:** {social_links}")
     
-    st.markdown("---")
+    st.divider()
 
 # --- EXPERIENCE SECTION ---
 def render_experience():
     """Renders Professional Experience details."""
-    st.header("💼 Professional Experience")
+    st.header("PROFESSIONAL EXPERIENCE")
 
     # --- ProductByDesign ---
-    st.markdown('<div class="st-emotion-cache-1r6i0x">', unsafe_allow_html=True) # Start custom card
+    st.markdown('<div class="content-card">', unsafe_allow_html=True) # Start custom card
     st.subheader("Associate Data Scientist (Remote Internship) @ ProductByDesign")
     st.caption("Melbourne, Australia | August 2025 - Present")
     st.markdown("""
@@ -141,18 +136,18 @@ def render_experience():
     st.markdown('</div>', unsafe_allow_html=True) # End custom card
 
     # --- Kalkitech Ltd ---
-    st.markdown('<div class="st-emotion-cache-1r6i0x">', unsafe_allow_html=True) # Start custom card
+    st.markdown('<div class="content-card">', unsafe_allow_html=True) # Start custom card
     st.subheader("Software Development Engineer Intern (Hybrid Internship) @ Kalkitech Ltd")
     st.caption("Kochi, Kerala | December 2023 - August 2025")
     st.markdown("""
     - Developed a C-based **simulation tool** to improve substation safety protocols, reducing incidents through better risk management.
-    - Built a **React UI** for enhanced accessibility and used data visualization for testing and performance validation.
+    - Built a React UI for enhanced accessibility and used data visualization for testing and performance validation.
     - Working on ML based projects to simulate phasor signals.
     """)
     st.markdown('</div>', unsafe_allow_html=True) # End custom card
 
     # --- AtithiGo ---
-    st.markdown('<div class="st-emotion-cache-1r6i0x">', unsafe_allow_html=True) # Start custom card
+    st.markdown('<div class="content-card">', unsafe_allow_html=True) # Start custom card
     st.subheader("Frontend Developer (Remote Internship) @ AtithiGo")
     st.caption("Kochi, Kerala | December 2024 - March 2025")
     st.markdown("""
@@ -162,18 +157,18 @@ def render_experience():
     """)
     st.markdown('</div>', unsafe_allow_html=True) # End custom card
     
-    st.markdown("---")
+    st.divider()
 
 # --- PROJECTS SECTION ---
 def render_projects():
     """Renders key projects using expandable sections for a clean look."""
-    st.header("💡 Key Projects & Achievements")
+    st.header("KEY PROJECTS & ACHIEVEMENTS")
 
     PROJECTS = [
         {
             "title": "Pill Management System (Pill Tracker)",
             "tech": "MERN Stack, MongoDB, Scanning Technology (e.g., OpenCV/QR Code)",
-            "desc": "Developed a full-stack MERN application for tracking medication inventory. Features included **scanning pills** (via QR or image processing) to instantly record critical details like **expiry date**, dosage, usage instructions, and stock levels in a MongoDB backend. Designed for robust data management and user safety."
+            "desc": "Developed a full-stack MERN application for tracking medication inventory. Features included **scanning pills** to instantly record critical details like **expiry date**, dosage, usage instructions, and stock levels in a MongoDB backend. Designed for robust data management and user safety."
         },
         {
             "title": "Gold Price Prediction",
@@ -193,16 +188,16 @@ def render_projects():
     ]
 
     for project in PROJECTS:
-        # The styling for st.expander is customized via CSS for rounded corners and shadow
+        # st.expander uses the .content-card styling via CSS injection
         with st.expander(f"**{project['title']}** - *{project['tech']}*"):
             st.markdown(project['desc'])
             
-    st.markdown("---")
+    st.divider()
 
 # --- SKILLS SECTION ---
 def render_skills():
     """Renders technical skills categorized."""
-    st.header("🛠️ Skills & Technologies")
+    st.header("SKILLS & TECHNOLOGIES")
     
     # Using 3 columns for density and readability
     col1, col2, col3 = st.columns(3)
@@ -219,17 +214,17 @@ def render_skills():
         st.subheader("Tools / Frameworks")
         st.markdown("Tableau, React, Flask, MongoDB, Express, Node.js, Hadoop, SAP Analytics Cloud")
 
-    st.markdown("---")
+    st.divider()
 
 # --- EDUCATION & LEADERSHIP SECTION ---
 def render_education_leadership():
     """Renders education and leadership experience side-by-side."""
-    st.header("📚 Education & Leadership")
+    st.header("EDUCATION & LEADERSHIP")
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader("🎓 Education")
-        st.markdown('<div class="st-emotion-cache-1r6i0x">', unsafe_allow_html=True) # Start custom card
+        st.subheader("Education")
+        st.markdown('<div class="content-card">', unsafe_allow_html=True) # Start custom card
         st.markdown("**BTech Computer Science & Engineering (Data Science)**")
         st.caption("Kalam Technical University, Mar Athanasius College of Engineering")
         st.markdown("Kothamangalam, Kerala | Expected June 2027")
@@ -237,8 +232,8 @@ def render_education_leadership():
         st.markdown('</div>', unsafe_allow_html=True) # End custom card
         
     with col2:
-        st.subheader("🚀 Leadership")
-        st.markdown('<div class="st-emotion-cache-1r6i0x">', unsafe_allow_html=True) # Start custom card
+        st.subheader("Leadership")
+        st.markdown('<div class="content-card">', unsafe_allow_html=True) # Start custom card
         st.markdown("**Campus Director @ Hult Prize MACE (2023-2025)**")
         st.markdown("""
         - Led the Hult Prize On-Campus Program with 100+ participants.
@@ -246,7 +241,7 @@ def render_education_leadership():
         """)
         st.markdown('</div>', unsafe_allow_html=True) # End custom card
         
-        st.markdown('<div class="st-emotion-cache-1r6i0x">', unsafe_allow_html=True) # Start custom card
+        st.markdown('<div class="content-card">', unsafe_allow_html=True) # Start custom card
         st.markdown("**Campus Lead @ TinkerHub MACE (2024-2025)**")
         st.markdown("""
         - Organized Kerala's largest women-exclusive hackathon, **Tink-Her-Hack** (100 participants).
@@ -254,7 +249,7 @@ def render_education_leadership():
         """)
         st.markdown('</div>', unsafe_allow_html=True) # End custom card
         
-    st.markdown("---")
+    st.divider()
 
 # --- FOOTER SECTION ---
 def render_footer():
