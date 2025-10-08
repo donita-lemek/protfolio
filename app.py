@@ -262,8 +262,9 @@ def render_education_leadership():
     # and consistent application of content-card styling across the columns.
     
     with col1:
-        st.markdown('<h3>Education</h3>', unsafe_allow_html=True)
+        # Integrated "Education" title into the content card structure for better alignment
         st.markdown('<div class="content-card">', unsafe_allow_html=True) 
+        st.markdown('<h3>Education</h3>', unsafe_allow_html=True)
         st.markdown("**BTech Computer Science & Engineering (Data Science)**")
         st.caption("Kalam Technical University, Mar Athanasius College of Engineering")
         st.markdown("Kothamangalam, Kerala | Expected June 2027")
@@ -271,9 +272,10 @@ def render_education_leadership():
         st.markdown('</div>', unsafe_allow_html=True) 
         
     with col2:
-        st.markdown('<h3>Leadership</h3>', unsafe_allow_html=True)
         # Leadership blocks
+        # Integrated "Leadership" title into the first content card structure for better alignment
         st.markdown('<div class="content-card">', unsafe_allow_html=True) 
+        st.markdown('<h3>Leadership</h3>', unsafe_allow_html=True)
         st.markdown("**Campus Director @ Hult Prize MACE (2023-2025)**")
         st.markdown("""
         - Led the Hult Prize On-Campus Program with 100+ participants.
