@@ -71,12 +71,11 @@ def local_css():
             color: {ACCENT_COLOR};
             font-weight: 600;
             font-size: 1.3em;
+            margin-top: 0 !important; /* Ensure H3 is flush with the top of the card */
             margin-bottom: 0.1em !important;
         }}
         
-        /* New H4 for Experience Titles: Used for clean, single-line details in previous version.
-           Now reverting to using st.subheader (which is styled as H3 by Streamlit)
-           and st.markdown for the company. H4 styling is kept for reference. */
+        /* New H4 styling is kept for reference but not strictly used in current structure */
         h4 {{
             color: {TEXT_COLOR};
             font-weight: 600;
@@ -104,6 +103,12 @@ def local_css():
             border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border for depth */
         }}
         
+        .content-card p, .content-card ul {{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }}
+
         .stExpander {{
             background-color: {CARD_BG};
             border-radius: 8px;
@@ -164,43 +169,50 @@ def render_experience():
     """Renders Professional Experience details."""
     st.header("PROFESSIONAL EXPERIENCE")
 
-    # Experience details are wrapped in content-card using raw markdown DIVs for full control
+    # Experience details are rendered inside a single large markdown block per job 
+    # to ensure all content stays within the custom 'content-card' div.
     
     # --- ProductByDesign ---
-    st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Associate Data Scientist") # Job Title
-    st.markdown("**ProductByDesign (Remote Internship)**") # Company and Mode
-    st.caption("Melbourne, Australia | August 2025 - Present")
-    st.markdown("""
-    - Built a **predictive dashboard** in SAP Analytics Cloud using time series forecasting.
-    - Modeled and wrangled data for analysis; applied **Smart Predict** to forecast trends.
-    - Visualized insights with interactive charts and KPIs to support business decisions.
-    """)
-    st.markdown('</div>', unsafe_allow_html=True) 
+    st.markdown(f"""
+    <div class="content-card">
+        <h3>Associate Data Scientist</h3>
+        <p>**ProductByDesign (Remote Internship)**</p>
+        <div class="stCaption">Melbourne, Australia | August 2025 - Present</div>
+        <ul>
+            <li>Built a **predictive dashboard** in SAP Analytics Cloud using time series forecasting.</li>
+            <li>Modeled and wrangled data for analysis; applied **Smart Predict** to forecast trends.</li>
+            <li>Visualized insights with interactive charts and KPIs to support business decisions.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
     # --- Kalkitech Ltd ---
-    st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Software Development Engineer Intern") # Job Title
-    st.markdown("**Kalkitech Ltd (Hybrid Internship)**") # Company and Mode
-    st.caption("Kochi, Kerala | December 2023 - August 2025")
-    st.markdown("""
-    - Developed a C-based **simulation tool** to improve substation safety protocols, reducing incidents through better risk management.
-    - Built a React UI for enhanced accessibility and used data visualization for testing and performance validation.
-    - Working on ML based projects to simulate phasor signals.
-    """)
-    st.markdown('</div>', unsafe_allow_html=True) 
+    st.markdown(f"""
+    <div class="content-card">
+        <h3>Software Development Engineer Intern</h3>
+        <p>**Kalkitech Ltd (Hybrid Internship)**</p>
+        <div class="stCaption">Kochi, Kerala | December 2023 - August 2025</div>
+        <ul>
+            <li>Developed a C-based **simulation tool** to improve substation safety protocols, reducing incidents through better risk management.</li>
+            <li>Built a React UI for enhanced accessibility and used data visualization for testing and performance validation.</li>
+            <li>Working on ML based projects to simulate phasor signals.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
 
     # --- AtithiGo ---
-    st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-    st.subheader("Frontend Developer") # Job Title
-    st.markdown("**AtithiGo (Remote Internship)**") # Company and Mode
-    st.caption("Kochi, Kerala | December 2024 - March 2025")
-    st.markdown("""
-    - Collaborated with a team of three developers to design and build the complete **front-end** for the AtithiGo hotel booking website.
-    - Utilized modern front-end technologies to ensure a responsive and user-friendly design.
-    - Focused on enhancing UI/UX for seamless navigation and booking experience.
-    """)
-    st.markdown('</div>', unsafe_allow_html=True) 
+    st.markdown(f"""
+    <div class="content-card">
+        <h3>Frontend Developer</h3>
+        <p>**AtithiGo (Remote Internship)**</p>
+        <div class="stCaption">Kochi, Kerala | December 2024 - March 2025</div>
+        <ul>
+            <li>Collaborated with a team of three developers to design and build the complete **front-end** for the AtithiGo hotel booking website.</li>
+            <li>Utilized modern front-end technologies to ensure a responsive and user-friendly design.</li>
+            <li>Focused on enhancing UI/UX for seamless navigation and booking experience.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
     
     st.markdown("---")
 
@@ -276,34 +288,40 @@ def render_education_leadership():
     # and consistent application of content-card styling across the columns.
     
     with col1:
-        # Integrated "Education" title into the content card structure for better alignment
-        st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-        st.markdown('<h3>Education</h3>', unsafe_allow_html=True)
-        st.markdown("**BTech Computer Science & Engineering (Data Science)**")
-        st.caption("Kalam Technical University, Mar Athanasius College of Engineering")
-        st.markdown("Kothamangalam, Kerala | Expected June 2027")
-        st.markdown("Cumulative GPA: **7.52/10**")
-        st.markdown('</div>', unsafe_allow_html=True) 
+        # Education block - all content within a single markdown block for container integrity
+        st.markdown(f"""
+        <div class="content-card">
+            <h3>Education</h3>
+            <p>**BTech Computer Science & Engineering (Data Science)**</p>
+            <div class="stCaption">Kalam Technical University, Mar Athanasius College of Engineering</div>
+            <div class="stCaption">Kothamangalam, Kerala | Expected June 2027</div>
+            <p>Cumulative GPA: **7.52/10**</p>
+        </div>
+        """, unsafe_allow_html=True) 
         
     with col2:
-        # Leadership blocks
-        # Integrated "Leadership" title into the first content card structure for better alignment
-        st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-        st.markdown('<h3>Leadership</h3>', unsafe_allow_html=True)
-        st.markdown("**Campus Director @ Hult Prize MACE (2023-2025)**")
-        st.markdown("""
-        - Led the Hult Prize On-Campus Program with 100+ participants.
-        - Organized community events to foster social impact-driven innovation.
-        """)
-        st.markdown('</div>', unsafe_allow_html=True) 
+        # Leadership block 1 - all content within a single markdown block
+        st.markdown(f"""
+        <div class="content-card"> 
+            <h3>Leadership</h3>
+            <p>**Campus Director @ Hult Prize MACE (2023-2025)**</p>
+            <ul>
+                <li>Led the Hult Prize On-Campus Program with 100+ participants.</li>
+                <li>Organized community events to foster social impact-driven innovation.</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
         
-        st.markdown('<div class="content-card">', unsafe_allow_html=True) 
-        st.markdown("**Campus Lead @ TinkerHub MACE (2024-2025)**")
-        st.markdown("""
-        - Organized Kerala's largest women-exclusive hackathon, **Tink-Her-Hack** (100 participants).
-        - Secured **Best Venue Award** among 63 venues in Kerala.
-        """)
-        st.markdown('</div>', unsafe_allow_html=True) 
+        # Leadership block 2 - all content within a single markdown block
+        st.markdown(f"""
+        <div class="content-card"> 
+            <p>**Campus Lead @ TinkerHub MACE (2024-2025)**</p>
+            <ul>
+                <li>Organized Kerala's largest women-exclusive hackathon, **Tink-Her-Hack** (100 participants).</li>
+                <li>Secured **Best Venue Award** among 63 venues in Kerala.</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
         
     st.markdown("---")
 
