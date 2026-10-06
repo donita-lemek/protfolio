@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Donita Lemek | Data Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500&display=swap">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#0f1722;--muted:#667085;--line:#dfe3ea;--gold:#a8780a;--chart:#0f1722;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0f15;--card:#111722;--ink:#eceff4;--muted:#8c97a9;--line:#212a38;--gold:#d9a93a;--chart:#eceff4}}
+:root[data-theme="dark"]{--bg:#0b0f15;--card:#111722;--ink:#eceff4;--muted:#8c97a9;--line:#212a38;--gold:#d9a93a;--chart:#eceff4}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:14px;padding-bottom:14px;font-size:14px}
+nav b{font:400 22px "Instrument Serif",Georgia,serif}
+nav div{display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center;padding:72px 0 40px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin:0 0 18px}
+.hero h1{font-size:clamp(64px,11vw,136px);line-height:.92;letter-spacing:-.025em}
+.hero .tagline{font:400 clamp(24px,3vw,34px)/1.2 "Instrument Serif",Georgia,serif;margin:28px 0 0;max-width:20em}
+.tagline em{color:var(--gold)}
+.hero p.sub{max-width:32em;color:var(--muted);font-size:17px;margin:16px 0 28px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{text-decoration:none;padding:10px 20px;border:1px solid var(--line);border-radius:999px;font-weight:500;font-size:15px}
+.btn:hover{border-color:var(--ink)}
+.btn.p{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.p:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.photo{aspect-ratio:4/5;border:1.5px dashed var(--line);border-radius:18px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:14px;background:var(--card);overflow:hidden;max-width:360px;justify-self:end;width:100%}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo span{display:block;font:400 56px "Instrument Serif",Georgia,serif;color:var(--gold);line-height:1}
+.chart{margin:8px 0 0}
+.chart svg{display:block;width:100%;height:clamp(80px,11vw,130px)}
+.chart path{vector-effect:non-scaling-stroke;fill:none}
+.hist{stroke:var(--chart);stroke-width:1.75}
+.fc{stroke:var(--gold);stroke-width:1.75;stroke-dasharray:6 6;opacity:0;animation:fade .8s 1.9s forwards}
+.band{fill:var(--gold);opacity:0;animation:band .9s 1.9s forwards}
+.now{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}
+.veil{fill:var(--bg);transform-box:fill-box;transform-origin:100% 50%;animation:reveal 1.8s .2s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes reveal{to{transform:scaleX(0)}}@keyframes fade{to{opacity:1}}@keyframes band{to{opacity:.16}}
+@media(prefers-reduced-motion:reduce){.veil{display:none}.fc{animation:none;opacity:1}.band{animation:none;opacity:.16}html{scroll-behavior:auto}}
+section{padding:72px 0 0}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.head h2{font-size:36px;line-height:1.1}
+.head p{margin:0;color:var(--muted);font-size:15px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about p{margin:0 0 16px;max-width:34em}
+.about p:first-child{font:400 clamp(22px,2.6vw,28px)/1.3 "Instrument Serif",Georgia,serif}
+.facts{margin:0;display:grid;gap:0}
+.facts div{padding:12px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.facts dt{font-size:14px;color:var(--muted)}.facts dd{margin:0;text-align:right}
+.row{display:grid;grid-template-columns:200px 1fr;gap:8px 32px;padding:22px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0;padding-top:0}
+.when{color:var(--muted);font-size:14px}
+.row h3{font-size:25px;line-height:1.2}
+.org{color:var(--muted)}
+.row ul.pts{margin:10px 0 0;padding-left:18px;max-width:42em}.pts li{margin:4px 0}
+details{margin-top:6px}
+summary{cursor:pointer;color:var(--muted);font-size:14px;padding:14px 0;border-top:1px solid var(--line);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ ";color:var(--gold)}
+details[open] summary::before{content:"\2212 "}
+details[open] summary{margin-bottom:0}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cards.three{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:24px;line-height:1.2}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card .tags{margin-top:auto;padding-top:8px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none;font-size:13px}
+.tags li{border:1px solid var(--line);border-radius:999px;padding:2px 11px;color:var(--muted)}
+.tags.big{gap:10px}.tags.big li{font-size:16px;padding:7px 20px;color:var(--ink);background:var(--card)}
+.list{list-style:none;margin:0;padding:0}
+.list li{padding:12px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.list li:first-child{border-top:0;padding-top:0}
+.list span{color:var(--muted);font-size:14px}
+.sub-h{font:500 13px "Hanken Grotesk",system-ui,sans-serif;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin:32px 0 12px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
+.skills h3{font:500 13px "Hanken Grotesk",system-ui,sans-serif;color:var(--muted);margin-bottom:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.two details summary{border-top:1px solid var(--line);padding:12px 0 0}
+.two details .list li:first-child{border-top:1px solid var(--line);padding-top:12px}
+.contact{text-align:center;padding-bottom:24px}
+.contact h2{font-size:clamp(36px,6vw,64px);line-height:1.05}
+.contact p{color:var(--muted);margin:12px 0 24px}
+.contact a.m{font:400 clamp(24px,4vw,40px)/1.1 "Instrument Serif",Georgia,serif;text-decoration:none;border-bottom:1px solid var(--gold);word-break:break-all}
+.contact .btns{justify-content:center;margin-top:28px}
+footer{margin-top:72px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;padding-bottom:32px}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:32px;padding-top:40px}.photo{justify-self:start;max-width:260px;order:-1}.about,.two{grid-template-columns:1fr;gap:28px}.cards,.cards.three,.skills{grid-template-columns:1fr}.row{grid-template-columns:1fr}nav div{gap:14px}}
+</style>
+</head>
+<body id="top">
+<nav aria-label="Main"><div class="wrap"><b>Donita Lemek</b><div><a href="#about">About</a><a href="#experience">Internships</a><a href="#projects">Projects</a><a href="#credentials">Credentials</a><a href="#more">Beyond code</a><a href="#contact">Contact</a></div></div></nav>
+
+<div class="wrap">
+<header class="hero">
+<div>
+<p class="eyebrow">Data science · FinTech · Kerala, India</p>
+<h1>Donita<br>Lemek</h1>
+<p class="tagline">Turning messy data into <em>decisions</em> people trust.</p>
+<p class="sub">I build forecasting models, data pipelines and risk analytics for financial and business data. Final year B.Tech student in Computer Science and Engineering (Data Science), open to roles from mid 2027.</p>
+<div class="btns"><a class="btn p" href="Resume.pdf" download>Download resume</a><a class="btn" href="#projects">View projects</a><a class="btn" href="#contact">Contact</a></div>
+</div>
+<img class="photo" src="Photo.jpeg" alt="Donita Lemek">
+</header>
+<figure class="chart" style="margin-bottom:0" aria-label="A price history line followed by a forecast and uncertainty band">
+<svg viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
+<polygon class="band" points="640,72 1000,4 1000,80"/>
+<line class="now" x1="640" y1="0" x2="640" y2="200"/>
+<path class="hist" d="M0 170Q60 150 120 160T240 140T360 118T480 100T600 82T640 72"/>
+<path class="fc" d="M640 72Q800 56 1000 38"/>
+<rect class="veil" width="1000" height="200"/>
+</svg>
+</figure>
+</div>
+
+<section id="about"><div class="wrap">
+<div class="head"><h2>About me</h2></div>
+<div class="about">
+<div>
+<p>I like turning messy financial and business data into models people can act on: forecasts, risk scores and decisions that come with an explanation.</p>
+<p>I am a final year B.Tech student at MACE, Kothamangalam. Alongside coursework I have worked on cybersecurity research and led student communities across technical, business and MUN circles.</p>
+</div>
+<dl class="facts">
+<div><dt>Studying</dt><dd>B.Tech CSE (Data Science), MACE</dd></div>
+<div><dt>Graduating</dt><dd>May 2027</dd></div>
+<div><dt>Focus</dt><dd>FinTech, ML, applied data science</dd></div>
+<div><dt>Languages</dt><dd>English, Malayalam, Hindi</dd></div>
+</dl>
+</div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<div class="head"><h2>Internships</h2><p>Analytics, machine learning, software and product.</p></div>
+<div id="exp"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<div class="head"><h2>Projects</h2><p>Finance focused machine learning, built end to end.</p></div>
+<div class="cards" id="proj"></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<div class="head"><h2>Skills</h2></div>
+<div class="skills" id="sk"></div>
+</div></section>
+
+<section id="credentials"><div class="wrap">
+<div class="head"><h2>Education and credentials</h2></div>
+<div class="row"><div class="when">2023 to May 2027</div><div><h3>B.Tech, Computer Science and Engineering (Data Science)</h3><div class="org">Mar Athanasius College of Engineering, Kothamangalam · APJ Abdul Kalam Technological University · CGPA 7.93/10</div></div></div>
+<div class="row"><div class="when">2021 to 2023</div><div><h3>Grade 12, Science</h3><div class="org">Hill Blooms School · 93.6% · School Vice Captain · International MUN 2021</div></div></div>
+<div class="row"><div class="when">Completed 2021</div><div><h3>Grade 10</h3><div class="org">Hill Blooms School · 93.2% · School Radio Jockey · School Drama Team</div></div></div>
+<h3 class="sub-h">Featured certifications</h3>
+<div class="cards three" id="certs"></div>
+<h3 class="sub-h">Courses and badges</h3>
+<ul class="list" id="badges"></ul>
+</div></section>
+
+<section id="recognition"><div class="wrap">
+<div class="head"><h2>Leadership and recognition</h2></div>
+<div class="two">
+<div><h3 class="sub-h" style="margin-top:0">Hackathons and awards</h3>
+<ul class="list">
+<li>Third place, state level hackathon<span>Kerala</span></li>
+<li>Best Venue Award, Tink-Her-Hack<span>Women only hackathon</span></li>
+<li>Runner up, Best Campus Ambassador<span>CET MUN, Trivandrum</span></li>
+<li>McKinsey Forward Fellow<span>McKinsey and Company</span></li>
+</ul></div>
+<div><h3 class="sub-h" style="margin-top:0">Roles</h3>
+<ul class="list">
+<li>Convenor, MACE Model United Nations<span>2026 to present</span></li>
+<li>Volunteer, Training and Placement Cell, MACE<span>Oct 2025 to present</span></li>
+<li>Campus Director Mentor, Hult Prize Foundation<span>Dec 2025 to Mar 2026</span></li>
+<li>USG Marketing Head, MACE MUN<span>Nov 2025 to Feb 2026</span></li>
+<li>Secretary, Robotics and Automation Society, IEEE MACE<span>Feb 2025 to Feb 2026</span></li>
+</ul>
+<details><summary>More roles (4)</summary><ul class="list">
+<li>Campus Lead, TinkerHub MACE<span>2024 to 2025</span></li>
+<li>Campus Director, Hult Prize MACE<span>2023 to 2025</span></li>
+<li>AI/ML Team, Google Developer Students Club<span>Sep 2023 to Jun 2024</span></li>
+<li>Student Member, IEDC MACE and IEEE MACE<span>2023 to present</span></li>
+</ul></details></div>
+</div>
+</div></section>
+
+<section id="more"><div class="wrap">
+<div class="head"><h2>Beyond the code</h2><p>What I do when I am not modelling data.</p></div>
+<ul class="tags big"><li>Reading</li><li>Cooking</li><li>Movies</li><li>Singing</li><li>Decorating</li><li>Gardening</li></ul>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Let's work together</h2>
+<p>Open to data science, analytics and FinTech roles.</p>
+<a class="m" href="mailto:donitalemek05@gmail.com">donitalemek05@gmail.com</a>
+<div class="btns"><a class="btn p" href="Donita_Lemek_Resume.pdf" download>Download resume</a><a class="btn" href="https://linkedin.com/in/donita-lemek" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/donita-lemek" target="_blank" rel="noopener">GitHub</a></div>
+</div></section>
+
+<footer><div class="wrap"><span>Donita Lemek · Kerala, India</span><span><a href="#top">Back to top</a></span></div></footer>
+
+<script>
+const jobs=[
+{when:"Sep 2026 to present",role:"Business Analyst Intern",org:"IMA360, Texas, USA",pts:["Translate client requirements into structured process flows and coordinate open items across business and technical teams.","Validate and map client data across Excel and Kafka streams during UAT, finding discrepancies against business requirements."]},
+{when:"May 2026 to Jul 2026",role:"Research Intern",org:"IIIT Kottayam, Kerala",pts:["Processed and validated 66M+ records across two cybersecurity datasets.","Engineered 85 standardized features to resolve inconsistencies in heterogeneous network traffic data.","Built supervised ML pipelines in Python to classify previously unlabeled records."]},
+{when:"Aug 2025 to Nov 2025",role:"Data Science Intern (Remote)",org:"ProductByDesign, Melbourne, Australia",pts:["Built 6+ ETL pipelines in Python and SQL to integrate, validate and preprocess multi source data.","Developed forecasting models in SAP Analytics Cloud for production planning.","Designed interactive dashboards communicating KPIs to business stakeholders."]},
+{when:"Dec 2024 to Mar 2025",role:"Frontend Developer",org:"AtithiGo, Kochi (Remote)",pts:["Built a hotel booking website for AtithiGo, a travel company, designed around the needs of the business.","Worked on the booking flow, site structure and the way hotel listings are presented so customers can find and book stays easily and the company can showcase its offerings online."]},
+{when:"Sep 2024 to Feb 2025",role:"Product Management Intern",org:"Ask Nina AI, New York (Remote)",pts:["Worked on a generative AI product for students and women exploring their career paths.","Improved the product marketing, including positioning and communication to the target audience.","Tested the product hands on and shared product insights that helped refine the user experience."]},
+{when:"Dec 2023 to Aug 2025",role:"Project Intern",org:"Kalkitech, Ernakulam (Remote)",pts:["Developed the web interface in React with a Java Spring Boot backend.","Supported the development of simulation software in C, focused on use in substations.","Tested the software by visualizing the data to check that outputs behaved as expected."]}];
+const projects=[
+{t:"ML Driven Financial Modelling and Forecasting Engine",d:"Modular backend engine that unites forecasting, risk assessment and portfolio optimization. ARIMA, Random Forest and LSTM models predict asset prices; VaR, CVaR, Sharpe ratio and drawdown measure risk; Modern Portfolio Theory sets allocations. Jan 2026 to present.",g:["ARIMA","Random Forest","LSTM","VaR / CVaR","Portfolio optimization"]},
+{t:"DalalSight",d:"Forecasts returns for 50 NIFTY stocks with an ensemble of ARIMA, LSTM and XGBoost trained on 5+ years of market and macro data. Modern Portfolio Theory with volatility and drawdown metrics supports portfolio decisions.",g:["ARIMA","LSTM","XGBoost","FastAPI","React","PostgreSQL","Streamlit"]},
+{t:"Expenso",d:"AI expense auditor that reads company policy and evaluates 100+ claims. A six layer explainability framework covers decision factors, confidence scores, counterfactuals and audit trails.",g:["Gemini API","AWS","Docker","CI/CD"]},
+{t:"CreditRiskScore",d:"XGBoost classifier that predicts loan default probability. End to end Scikit-learn pipeline with EDA, imputation and one hot encoding, assessed by AUC and saved as a single joblib artifact.",g:["XGBoost","Scikit-learn","AUC","EDA"]},
+{t:"Gold Price Prediction and Policy Simulation",d:"Forecasts Indian retail gold prices 30 days ahead from USD/INR, crude oil and gold futures, with simulations of Import Duty, GST and geopolitical risk across 5 datasets.",g:["Linear Regression","Lag features","Simulation"]},
+{t:"Verbal Roast",d:"Takes a video, finds the words you say most often, and humorously roasts you for overusing them.",g:["NLP","Python"]}];
+const certs=[
+{t:"IBM Data Science Professional Certificate",o:"IBM · Sep 2026"},
+{t:"Business and Financial Modelling Specialisation",o:"Wharton Online"},
+{t:"McKinsey Forward Program",o:"McKinsey and Company"}];
+const badges=[["Intermediate Machine Learning","Kaggle · Sep 2024"],["Intro to Machine Learning","Kaggle · Aug 2024"],["Exploring Data Transformation with Google Cloud","Google · Jul 2024"],["Introduction to Generative AI","Google · Jul 2024"]];
+const skills={"Analytics":["SQL","Python","R","Pandas","NumPy","Statistical Modelling","Time Series Forecasting","Hypothesis Testing","Financial Modelling"],
+"Machine learning":["Scikit-learn","XGBoost","PyTorch","ARIMA","LSTM","Random Forest","Linear Regression","NLP","Gemini API"],
+"Data engineering":["PySpark","Databricks","Kafka","Hadoop","ETL","PostgreSQL"],
+"Web and backend":["React","Java","Spring Boot","FastAPI","Streamlit","C"],
+"BI and tools":["Power BI","Tableau","SAP Analytics Cloud","Bloomberg","Excel","Jupyter"],
+"Cloud and DevOps":["AWS","Docker","CI/CD","Git"]};
+const $=id=>document.getElementById(id);
+const tags=a=>'<ul class="tags">'+a.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+const job=j=>`<div class="row"><div class="when">${j.when}</div><div><h3>${j.role}</h3><div class="org">${j.org}</div><ul class="pts">${j.pts.map(p=>'<li>'+p+'</li>').join('')}</ul></div></div>`;
+$('exp').innerHTML=jobs.slice(0,3).map(job).join('')+'<details><summary>Earlier internships ('+(jobs.length-3)+')</summary>'+jobs.slice(3).map(job).join('')+'</details>';
+$('proj').innerHTML=projects.map(p=>`<article class="card"><h3>${p.t}</h3><p>${p.d}</p>${tags(p.g)}</article>`).join('');
+$('certs').innerHTML=certs.map(c=>`<article class="card"><h3>${c.t}</h3><p>${c.o}</p></article>`).join('');
+$('badges').innerHTML=badges.map(b=>`<li>${b[0]}<span>${b[1]}</span></li>`).join('');
+$('sk').innerHTML=Object.entries(skills).map(([k,v])=>`<div><h3>${k}</h3>${tags(v)}</div>`).join('');
+</script>
+</body>
+</html>
